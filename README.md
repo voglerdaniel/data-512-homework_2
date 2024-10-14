@@ -44,10 +44,12 @@ This repository has the following structure (created using the [tree command](ht
     ├── wp_ores_liftwing_example.ipynb
     └── wp_page_info_example.ipynb
 
-8 directories, 23 files; intermediate_data_batches folder is omitted for brevity.
+8 directories, 23 files; intermediate_data_batches folder and README file are omitted for brevity.
 
 ```
 
 ## Research Implications
 
-Before s
+Before starting to work with this data (see `raw_data` [folder](./raw_data/)), I expected politicians from large, wealthy countries, especially English-speaking ones, to be over-represented in this dataset relative to their countries. This would reflect the high profiles of politicians from these countries on the world stage and the fact that their countries predominantly speak English. I was surprised to find that several large countries (Netherlands, US, Mexico, Canada, United Kingdom, etc.) are [not represented](./output_data/wp-countries_no-match.txt) in the dataset. It is possible that they were omitted from the politicians dataset as outliers, but this is impossible to test since they are not included. In the course of my data processing and analysis, I found that the sources of bias I anticipated may have still played a role, even if the countries I expected to drive this effect weren't present. Northern Europe and the Caribbean, two regions with significant English fluency (even if it is often spoken as a second langauge) and close ties to English-speaking countries had some of the highest rates of high-quality articles per 1M inhabitants; East Asia and South Asia had some of the lowest rates. To validate my hypothesis about biases, future researchers should supplement this dataset by including politicians from countries that were omitted and add current politicians from countries that are already in the dataset[^1].
+
+[^1]: For example, Shinzo Abe and Olaf Scholz do not appear in the raw data, even though other politicians from Japan and Germany do. 
