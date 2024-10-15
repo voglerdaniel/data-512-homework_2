@@ -48,6 +48,15 @@ This repository has the following structure (created using the [tree command](ht
 
 ```
 
+### Data Folders
+
+This repository has four data folders:
+- `raw_data`: the original, completely unmodified data specifying *which* politicians to pull information about
+- `cleaned_data`: the raw data, transformed to [resolve inconsistencies](.//code/resolving_data_inconsistencies.ipynb)
+- `intermediate_data_batches`: batches of article prediction quality data; these can be stitched together to form the complete dataset recording article quality
+- `output_data`: the major, processed datasets contributing to the final analysis. Only basic computations are executed on these data in the [analysis notebook](.//code/analysis.ipynb); otherwise they are unmodified.
+
+
 ## Research Implications
 
 Before starting to work with this data (see `raw_data` [folder](./raw_data/)), I expected politicians from large, wealthy countries, especially English-speaking ones, to be over-represented in this dataset relative to their countries. This would reflect the high profiles of politicians from these countries on the world stage and the fact that their countries predominantly speak English. I was surprised to find that several large countries (Netherlands, US, Mexico, Canada, United Kingdom, etc.) are [not represented](./output_data/wp-countries_no-match.txt) in the dataset. It is possible that they were omitted from the politicians dataset as outliers, but this is impossible to test since they are not included. In the course of my data processing and analysis, I found that the sources of bias I anticipated may have still played a role, even if the countries I expected to drive this effect weren't present. Northern Europe and the Caribbean, two regions with significant English fluency (even if it is often spoken as a second langauge) and close ties to English-speaking countries had some of the highest rates of high-quality articles per 1M inhabitants; East Asia and South Asia had some of the lowest rates. To validate my hypothesis about biases, future researchers should supplement this dataset by including politicians from countries that were omitted and add current politicians from countries that are already in the dataset[^1]. They could also supplement this analysis by joining the dataset I produced with a dataset of English-speaking rates by country to investigate whether countries with many English speakers are indeed over-represented relative to population.
